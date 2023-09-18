@@ -1,2 +1,2 @@
-def function2(c):
-  print(c)
+def better_name(param1):
+  print(param1)
