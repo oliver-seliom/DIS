@@ -1,4 +1,5 @@
 def function1(a, b):
-  c = b - a
+  c = b * a
   print(c) 
+  print(a)
   
