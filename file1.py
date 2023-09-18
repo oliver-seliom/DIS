@@ -1,3 +1,4 @@
 def function1(a, b):
-  print(a)
+  c = b - a
+  print(c) 
   
