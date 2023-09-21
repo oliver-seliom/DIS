@@ -1,3 +1,86 @@
+# Git Cheatsheet: Alice works on a project by herself
+
+## 1. Setting up
+**Initialize and Push by Alice**: Alice wants to work on a new project on her own. She creates a new repository.
+
+```bash
+# Alice creates a new project
+mkdir my_project
+cd my_project
+# ... Alice creates here all the relevant project files
+
+# Alice initializes the local repository
+git init
+```
+
+Since she wants to keep a copy online, Alice pushes the repository to Github. To this she first creates a new project on github and grabs its URL.
+
+```bash
+git remote add origin https://github.com/alice/my_project.git
+
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+## 2. Regular development flow
+
+Since Alice is the only developer in the project, she feels comfortable working directly on the master branch. She decides she wants to work on a new feature, and starts adding her changes directly. When she is done, she commits those changes:
+
+```bash
+git add .
+git commit -m "Added some changes"
+git push
+```
+
+Alice realizes she took a wrong approach, she wants to go back in time and forget about her work. To do this, she looks at the log to see the ID of the commit:
+
+```bash
+git log
+```
+
+### OPTION A: git reset
+
+She grabs the commit ID, and resets back to it:
+
+```bash
+git reset COMMIT_ID
+```
+
+Right now, her changes are unstaged, so she can decide to remove those changes by checking them out:
+
+```bash
+# This command essentially says: any existing change, that have not been added, can be forgotten and deleted.
+git checkout .
+``` 
+
+If she tries to push, she will get an error from Github because she is currently behind the branch, she forces github to accept her changes:
+```bash
+git push --force
+```
+
+Something feels odd about this. We are changing history. Is there a better way?
+
+Rather than resetting, she can revert!
+
+### OPTION B: git revert
+
+She grabs the commit ID, and reverts it:
+
+```bash
+git revert COMMIT_ID
+```
+
+Now, she has new changes in her branch, that undo every single change in the commit she chose. She can now add extra changes or fixes, and commit:
+
+```bash
+git add .
+git commit -m "Undo some changes where I messed up"
+git push
+```
+
+What is the difference? She did not modify history. Conclusion: git revert should be used to undo changes on a public branch, and git reset should be reserved for undoing changes on a private branch.
+
 # Git Cheatsheet: Alice and Bob's Collaboration
 
 ## 1. Setting up
