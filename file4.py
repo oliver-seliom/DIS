@@ -3,3 +3,6 @@ def login(b):
 
 def logout(b):
   print(b)
+
+def logout(c):
+  print(c)
