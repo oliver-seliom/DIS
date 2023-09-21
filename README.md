@@ -65,7 +65,7 @@ Rather than resetting, she can revert!
 
 ### OPTION B: git revert
 
-She grabs the commit ID, and reverts it:
+When Alice identifies that she made a mistake, **in a specific commit**, she grabs the commit ID of the offending commit, and reverts it:
 
 ```bash
 git revert COMMIT_ID
@@ -79,7 +79,7 @@ git commit -m "Undo some changes where I messed up"
 git push
 ```
 
-What is the difference? She did not modify history. Conclusion: git revert should be used to undo changes on a public branch, and git reset should be reserved for undoing changes on a private branch.
+It is possible some merge conflicts exist. She should take the time to ensure fix those merge conflicts. What is the difference with git reset? She did not modify history. Conclusion: git revert should be used to undo changes on a public branch, and git reset should be reserved for undoing changes on a private branch.
 
 # Git Cheatsheet: Alice and Bob's Collaboration
 
