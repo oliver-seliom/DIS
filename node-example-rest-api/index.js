@@ -14,13 +14,14 @@ app.get('/users', (req, res) => {
     res.json(users);
 });
 
+// POST endpoint to create a new user
 app.post('/users', (req, res) => {
     const newUser = req.body;
     users.push(newUser);
     res.status(201).json(newUser);
 });
 
-// // GET 1 user by id
+// GET 1 user by id
 app.get('/users/:id', (req, res) => {
     const userId = parseInt(req.params.id, 10);
     const index = users.findIndex(user => user.id === userId);
@@ -32,10 +33,7 @@ app.get('/users/:id', (req, res) => {
     }
 });
 
-// // POST endpoint to create a new user
-
-
-// // PUT endpoint to update a specific user by ID
+// PUT endpoint to update a specific user by ID
 app.put('/users/:id', (req, res) => {
     const userId = parseInt(req.params.id, 10);
     const updatedUser = req.body;
@@ -50,7 +48,7 @@ app.put('/users/:id', (req, res) => {
     }
 });
 
-// // DELETE endpoint to remove a user by ID
+// DELETE endpoint to remove a user by ID
 app.delete('/users/:id', (req, res) => {
     const userId = parseInt(req.params.id, 10);
     const index = users.findIndex(user => user.id === userId);
