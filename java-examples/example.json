@@ -1,0 +1,13 @@
+{
+  "address": {
+    "zip": "12345",
+    "city": "Springfield",
+    "street": "13 Elm Street"
+  },
+  "name": "John Doe",
+  "phoneNumbers": [
+    "123-456-7890",
+    "987-654-3210"
+  ],
+  "age": 30
+}
