@@ -1,0 +1,1 @@
+[{"id":1,"name":"John Connor","email":"john.connor@example.com","roles":["Member","Admin"],"admin":true},{"id":2,"name":"Tom Lee","email":"tom.lee@example.com","roles":["Member"],"admin":false},{"id":3,"name":"Roy Fielding","email":"roy.fielding@legend.com","roles":["Member","Admin","DemiGod"],"admin":true},{"id":4,"name":"Oliver","email":"oliver@hello.com","admin":false}]
