@@ -25,7 +25,7 @@ public class UserController {
 
   // GET /users/:id -> return a single user
   @GetMapping("/users/{id}") 
-	public ResponseEntity<User> user(@PathVariable int id, @RequestParam(value = "name", defaultValue = "World") String name) throws IOException {
+	public ResponseEntity<User> user(@PathVariable int id) throws IOException {
     JSONManager dataManager = new JSONManager();
     ArrayList<User> users = dataManager.users();
     User foundUser = findUserById(users, id);
